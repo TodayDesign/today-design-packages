@@ -1,6 +1,6 @@
 {
   "name": "@today/nuxt-icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./lib/module.js",
   "dependencies": {
