@@ -1,4 +1,4 @@
-import { importIcons } from '@today/nuxt-icons/core/icons'
+import { importIcons } from '@todaydesign/nuxt-icons/core/icons'
 
 export default ({ store }, inject) => {
 

@@ -1,5 +1,5 @@
 {
-  "name": "@today/nuxt-icons",
+  "name": "@todaydesign/nuxt-icons",
   "version": "1.0.1",
   "description": "",
   "main": "./lib/module.js",
