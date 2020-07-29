@@ -8,5 +8,8 @@
   },
   "peerDependencies": {
     "nuxt": "^2.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
