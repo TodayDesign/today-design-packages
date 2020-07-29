@@ -1,0 +1,12 @@
+{
+  "name": "@today/nuxt-icons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/module.js",
+  "dependencies": {
+    "html-loader": "^0.5.5"
+  },
+  "peerDependencies": {
+    "nuxt": "^2.9.2"
+  }
+}
