@@ -1,12 +1,19 @@
 
 const path = require('path')
 
-module.exports = function icons () {
+const defaults = {
+  iconsDir: 'assets/icons/'
+}
+
+module.exports = function icons (moduleOptions) {
+  const options = Object.assign(defaults, this.options.craftcms, moduleOptions)
+
   // Register `plugin.js` template
   this.addPlugin({
     src: path.resolve(__dirname, 'plugin.js'),
     fileName: 'icons.js',
-    ssr: false
+    ssr: false,
+    options
   })
 
   // Add `html-loader` to load svgs
@@ -15,7 +22,7 @@ module.exports = function icons () {
     const urlLoader = config.module.rules.find(rule => rule.use && rule.use.find(r => r.loader === 'url-loader'))
     if (urlLoader) {
       urlLoader.exclude = [
-        path.resolve(__dirname, '../../../assets/icons/')
+        path.resolve(__dirname, '../../../../', options.iconsDir)
       ]
     }
     config.module.rules.push({
@@ -24,8 +31,8 @@ module.exports = function icons () {
       options: {
         minimize: true
       },
-      include: [
-        path.resolve(__dirname, '../../../assets/icons/')
+      include:  [
+        path.resolve(__dirname, '../../../../', options.iconsDir)
       ]
     })
   })
