@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-craftcms",
+  "version": "0.1.4",
+  "description": "",
+  "main": "dist/module.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "postinstall": "node scripts/create-schema.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@nuxtjs/robots": "^2.4.2",
+    "@nuxtjs/sitemap": "^2.0.0",
+    "algoliasearch" : "^3.34.0",
+    "apollo-boost": "^0.4.4",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "url-search-params-polyfill": "8.1.0"
+  },
+  "peerDependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.9.2"
+  }
+}
