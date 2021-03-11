@@ -104,6 +104,13 @@ const craftcms: Module<Options> = async function (moduleOptions) {
     options
   })
 
+  // Extend craftcms with plugins
+  // This is where queries and templates will be loaded
+  if (options.plugins) {
+    options.plugins.forEach((p) => this.options.plugins.push(p))
+    delete options.plugins
+  }
+
   // Extends routes to add CMS wildcard route, routes added under /pages will still take precedence
   this.extendRoutes((routes: any, resolve: any) => {
     routes.push(
@@ -168,7 +175,6 @@ const craftcms: Module<Options> = async function (moduleOptions) {
   }
 
   // Redirect activation emails
-
   const robots = options.disallowIndexing ? {
     UserAgent: '*',
     Disallow: '/'

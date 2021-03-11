@@ -7,15 +7,6 @@
   "scripts": {
     "build": "tsc"
   },
-  "exports": {
-    ".": {
-      "require": "./dist/module.js"
-    },
-    "./dist/module": {
-      "require": "./dist/module.js"
-    }
-  },
-  "typings": "./index.d.ts",
   "files": [
     "dist",
     "templates",

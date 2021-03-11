@@ -2,11 +2,11 @@ import gql from 'graphql-tag'
 import mappingFilters from './mapping-filters'
 import 'url-search-params-polyfill'
 
-const entryTypes: any = {}
-
 export default async function (context) {
   const options = context.app.$craftcms.options
   const client = context.app.$craftcms.apolloClient
+  const entryTypes = context.app.$craftcms.entryTypes
+
   let apolloContext : Object | null = null
   let uri = context.route.path === '/'
     ? '__home__'
