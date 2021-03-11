@@ -5,7 +5,7 @@ import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
 require('es6-promise').polyfill()
 require('isomorphic-fetch')
 
-export default function (options) {
+export default function (options: any) {
   const httpLink = new HttpLink({ uri: options.contentBaseUrl + options.graphqlEndpoint, fetch })
   const introspectionQueryResultData = options.schema
   const fragmentMatcher = new IntrospectionFragmentMatcher({

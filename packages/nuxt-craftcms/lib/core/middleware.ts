@@ -1,7 +1,8 @@
 import gql from 'graphql-tag'
 import mappingFilters from './mapping-filters'
-import entryTypes from '~/nuxt-craftcms/load-queries'
 import 'url-search-params-polyfill'
+
+const entryTypes: any = {}
 
 export default async function (context) {
   const options = context.app.$craftcms.options

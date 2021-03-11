@@ -1,6 +1,7 @@
 import algoliasearch from 'algoliasearch'
+import {ApolloClient} from "apollo-boost";
 
-export const craftcms = (apolloClient, options: any = {}) => ({
+export const craftcms = (apolloClient: ApolloClient<any>, options: any = {}): any => ({
 
   apolloClient,
 
@@ -39,7 +40,7 @@ export const craftcms = (apolloClient, options: any = {}) => ({
           }
 
           if (indexSettings.replicas) {
-            indexSettings.replicas.forEach((replica) => {
+            indexSettings.replicas.forEach((replica: any) => {
               this.searchClient.copyIndex(indexSettings.name, `${indexSettings.name}_${replica.name}`).then(() => {
                 const indexName = replica.name
                 this.searchIndeces[indexName] = this.searchClient.initIndex(`${indexSettings.name}_${replica.name}`)
@@ -61,7 +62,7 @@ export const craftcms = (apolloClient, options: any = {}) => ({
     return options
   },
 
-  async search (indexName, params) {
+  async search (indexName: string, params: any) {
     if (!this.searchClient) {
       return
     }

@@ -1,10 +1,10 @@
-import { craftcms } from '../core'
-import apolloClient from '../core/apollo'
+import { craftcms } from 'nuxt-craftcms/dist/core'
+import apolloClient from 'nuxt-craftcms/dist/core/apollo'
 
 export default async ({ env, app, req, res, store , route}, inject) => {
 
-  // const options = <%= serialize(options) %>
-  const options: any = {}
+  const options = <%= serialize(options) %>
+
   const client = apolloClient(options)
   const craftcmsService = craftcms(client, options)
 

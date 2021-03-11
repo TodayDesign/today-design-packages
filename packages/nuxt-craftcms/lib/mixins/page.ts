@@ -1,11 +1,11 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import { namespace } from 'vuex-class'
 import middleware from '../core/middleware'
-import templates from '~/nuxt-craftcms/load-templates'
+const templates: any = {}
 
 const craftcmsStore = namespace('craftcms')
 
-@Component
+@Component({})
 export default class PageMixin extends Vue {
   page: any = {}
   pageType: string = ''
@@ -60,7 +60,7 @@ export default class PageMixin extends Vue {
   }
 
   async asyncData (context: any) {
-    const customMiddleware = context.app.$craftcms.options.middleware.map(func => func(context))
+    const customMiddleware = context.app.$craftcms.options.middleware.map((func: Function) => func(context))
 
     if (process.static && process.client && '$payloadURL' in context) {
       const data = await context.$axios.$get(context.$payloadURL(context.route))

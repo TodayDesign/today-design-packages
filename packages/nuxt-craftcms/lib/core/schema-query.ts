@@ -1,6 +1,8 @@
+import {Options} from "../module";
+
 const axios = require('axios')
 
-export default async function (options) {
+export default async function (options: Options) {
   const headers = options.apiToken ? {
     authorization: options.apiToken ? `Bearer ${options.apiToken}` : ''
   } : {}
@@ -28,7 +30,7 @@ export default async function (options) {
   })
 
   // here we're filtering out any type information unrelated to unions or interfaces
-  const filteredData = data.data.__schema.types.filter(type => type.possibleTypes !== null)
+  const filteredData = data.data.__schema.types.filter((type: any) => type.possibleTypes !== null)
 
   data.data.__schema.types = filteredData
 

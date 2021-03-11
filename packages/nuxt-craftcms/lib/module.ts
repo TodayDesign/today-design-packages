@@ -10,29 +10,29 @@ declare module 'vue/types/vue' {
 }
 
 interface SearchOptions {
-  apiKey: String,
-  appId: String,
+  apiKey: string,
+  appId: string,
   indeces: Object | null
 }
 
-interface Options {
-  baseUrl: String,
-  appBaseUrl: String,
-  useProxy?: Boolean,
+export interface Options {
+  baseUrl: string,
+  appBaseUrl: string,
+  useProxy?: boolean,
   modules: any,
-  apiToken?: String,
-  graphqlEndpoint?: String,
-  siteHandle?: String,
-  siteName?: String,
+  apiToken?: string,
+  graphqlEndpoint?: string,
+  siteHandle?: string,
+  siteName?: string,
   search?: SearchOptions,
   paginatedRoutes?: Array<Object>,
-  disallowIndexing?: Boolean
+  disallowIndexing?: boolean
   schema?: Object | null,
-  productionUrl: String,
+  productionUrl: string,
   robots?: Object,
   middleware?: Array<Function>,
-  sitemap?: Boolean,
-  showEditBtn? : Boolean
+  sitemap?: boolean,
+  showEditBtn? : boolean
 }
 
 export const defaults: Options = {
@@ -99,13 +99,13 @@ const craftcms: Module<Options> = async function (moduleOptions) {
 
   // Register `plugin.js` template
   this.addPlugin({
-    src: path.resolve(__dirname, 'templates/plugin.ts'),
+    src: path.resolve(__dirname, '../templates/plugin.js'),
     fileName: 'craftcms.js',
     options
   })
 
   // Extends routes to add CMS wildcard route, routes added under /pages will still take precedence
-  this.extendRoutes((routes, resolve) => {
+  this.extendRoutes((routes: any, resolve: any) => {
     routes.push(
       {
         name: 'craftcms',
@@ -123,7 +123,7 @@ const craftcms: Module<Options> = async function (moduleOptions) {
 
   // Generate static routes from GraphQL
   if (options.mode === 'universal') {
-    this.nuxt.hook('generate:extendRoutes', async (routes) => {
+    this.nuxt.hook('generate:extendRoutes', async (routes: any) => {
       try {
         const staticRoutes: Array<any> = await generateRoutes(options)
         const payload = {
