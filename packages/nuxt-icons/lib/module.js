@@ -20,11 +20,11 @@ module.exports = function icons (moduleOptions) {
   // Add `html-loader` to load svgs
   this.extendBuild((config) => {
     // Exclude svg from url-loader
-    const urlLoader = config.module.rules.find(rule => rule.use && rule.use.find(r => r.loader === 'url-loader'))
-    if (urlLoader) {
-      urlLoader.exclude = [
-        path.resolve(__dirname, '../../../../', options.iconsDir),
-        ...options.loadPaths.map(p => path.resolve(__dirname, '../../../../', p))
+    const svgLoader = config.module.rules.find(rule => rule.test && String(rule.test).includes('svg'))
+
+    if (svgLoader) {
+      svgLoader.exclude = [
+        path.resolve(__dirname, '../../../assets/icons/')
       ]
     }
     config.module.rules.push({
