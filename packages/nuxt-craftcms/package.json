@@ -41,5 +41,6 @@
     "typescript": "latest",
     "vue": "latest",
     "vuex-class": "^0.3.2"
-  }
+  },
+  "gitHead": "2e30ea43552daf9213be98038c310b261e421202"
 }
