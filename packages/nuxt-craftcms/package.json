@@ -1,6 +1,6 @@
 {
   "name": "nuxt-craftcms",
-  "version": "0.1.4",
+  "version": "1.0.0-alpha.0",
   "description": "",
   "main": "dist/module.js",
   "types": "dist/module.d.ts",
@@ -19,8 +19,8 @@
     "apollo-boost": "^0.4.4",
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
-    "url-search-params-polyfill": "8.1.0",
-    "nuxt-property-decorator": "^2.9.1"
+    "nuxt-property-decorator": "^2.9.1",
+    "url-search-params-polyfill": "8.1.0"
   },
   "peerDependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -28,18 +28,18 @@
     "vue": "*"
   },
   "devDependencies": {
-    "@types/algoliasearch": "^3.34.11",
-    "vuex-class": "^0.3.2",
     "@nuxt/test-utils": "^0.1.2",
     "@nuxt/types": "latest",
     "@nuxt/typescript-build": "latest",
     "@nuxt/typescript-runtime": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/algoliasearch": "^3.34.11",
     "@types/node": "latest",
     "eslint": "latest",
     "nuxt": "^2.14.12",
     "ts-loader": "^8.0.15",
     "typescript": "latest",
-    "vue": "latest"
+    "vue": "latest",
+    "vuex-class": "^0.3.2"
   }
 }
