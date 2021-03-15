@@ -1,6 +1,6 @@
 {
   "name": "@todaydesign/nuxt-craftcms",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "",
   "main": "dist/module.js",
   "types": "dist/module.d.ts",
