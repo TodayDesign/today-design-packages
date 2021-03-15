@@ -1,6 +1,6 @@
 {
   "name": "@todaydesign/nuxt-craftcms",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.0",
   "description": "",
   "main": "dist/module.js",
   "types": "dist/module.d.ts",
@@ -42,5 +42,5 @@
     "vue": "latest",
     "vuex-class": "^0.3.2"
   },
-  "gitHead": "2e30ea43552daf9213be98038c310b261e421202"
+  "gitHead": "10d4b658f06e3c13a987422834ded014e201e945"
 }
