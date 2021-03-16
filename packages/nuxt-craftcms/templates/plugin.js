@@ -1,5 +1,5 @@
-import { craftcms } from 'nuxt-craftcms/dist/core'
-import apolloClient from 'nuxt-craftcms/dist/core/apollo'
+import { craftcms } from '@todaydesign/nuxt-craftcms/dist/core'
+import apolloClient from '@todaydesign/nuxt-craftcms/dist/core/apollo'
 
 export default async ({ env, app, req, res, store , route}, inject) => {
 
