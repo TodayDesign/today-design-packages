@@ -10,7 +10,7 @@ export const craftcms = (apolloClient: ApolloClient<any>, options: any = {}): an
     options.search.appId &&
     options.search.apiKey
       ? algoliasearch(options.search.appId, options.search.apiKey)
-      : null
+      : null,
 
   searchIndeces: {},
 
