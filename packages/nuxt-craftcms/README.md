@@ -59,3 +59,48 @@ export default function (ctx: any) {
 This allows us to load the GraphQL queries from inside the module.
 
 6. Run `npm run dev` to make sure it has all loaded properly.
+
+
+## Development workflow
+
+To make changes to the module you can use this workflow
+
+```bash
+# Clone the repo
+git clone git@github.com:TodayDesign/today-design-packages.git
+
+# Go into the nuxt-craftcms directory
+cd today-design-packages/packages/nuxt-craftcms   
+
+# Create a NPM syslink
+npm link
+
+# Watch the filechanges with
+npm run dev
+```
+⚠️ If you're trying to edit `.vue` files, edit them directly in the dist folder. Then when you're finished, copy the modified files to the lib folder. 
+
+Now you can go into the project where you will test the package
+
+```bash 
+# Go to your project's frontend folder
+cd youproject/frontend
+
+# Link the project with the NPM syslink
+npm link @todaydesign/nuxt-craftcms
+```
+
+To watch for file changes in the package, add this line in the `nuxt.config.ts`:
+```bash
+  watch: ['~/node_modules/@todaydesign/nuxt-craftcms/dist/*'],
+```
+
+Run the dev environment
+```bash
+npm run dev
+```
+
+Now when ever you make changes to the package, typescript will reload the dist folder and your nuxt project will reload with the updated package.
+
+
+
