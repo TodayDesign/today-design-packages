@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": [
+      "DOM"
+    ],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": false,
+    "declaration": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "declarationDir": "temp/types",
+    "experimentalDecorators": true,
+    "types": [
+      "@types/node",
+      "@nuxt/types"
+    ]
+  },
+  "include": [
+    "lib",
+    "lib/**/*.ts",
+    "lib/**/*.vue"
+  ],
+  "exclude": [
+    "templates"
+  ],
+}

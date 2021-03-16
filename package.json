@@ -4,6 +4,8 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "changed": "lerna changed",
+    "diff": "lerna diff"
   }
 }
