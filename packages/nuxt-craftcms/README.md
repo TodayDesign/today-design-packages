@@ -72,10 +72,13 @@ git clone git@github.com:TodayDesign/today-design-packages.git
 # Go into the nuxt-craftcms directory
 cd today-design-packages/packages/nuxt-craftcms   
 
+# Install dependencies
+npm i
+
 # Create a NPM syslink
 npm link
 
-# Watch the filechanges with
+# Watch the file changes
 npm run dev
 ```
 ⚠️ If you're trying to edit `.vue` files, edit them directly in the dist folder. Then when you're finished, copy the modified files to the lib folder. 
@@ -101,6 +104,20 @@ npm run dev
 ```
 
 Now when ever you make changes to the package, typescript will reload the dist folder and your nuxt project will reload with the updated package.
+
+## Publishing to NPM
+```bash
+# Login to NPM, you can find the details in Team Password
+npm login
+
+# Go to the root of today-design-packages
+cd today-design-packages
+
+# Publish with Lerna
+npm run publish
+
+```
+The package will now be available as `@today-design/nuxt-craftcms`
 
 
 
