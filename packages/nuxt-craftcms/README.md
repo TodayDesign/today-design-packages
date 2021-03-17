@@ -11,17 +11,17 @@ npm i @todaydesign/nuxt-craftcms
 
 2. Add `@todaydesign/nuxt-craftcms` to the `modules` section inside `nuxt.config.ts`.
    For example:
-   ```
-    /*
-    ** Nuxt.js modules
-    */
-    modules: [
-        '@nuxtjs/pwa',
-        '@todaydesign/nuxt-craftcms',
-        '@todaydesign/nuxt-icons',
-        'nuxt-polyfill'
-    ],
-    ```
+```
+ /*
+ ** Nuxt.js modules
+ */
+ modules: [
+     '@nuxtjs/pwa',
+     '@todaydesign/nuxt-craftcms',
+     '@todaydesign/nuxt-icons',
+     'nuxt-polyfill'
+ ],
+ ```
 
 3. Add the Craft CMS options to your `nuxt.config.ts`:
 
