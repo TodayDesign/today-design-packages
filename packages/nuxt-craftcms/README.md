@@ -23,7 +23,19 @@ npm i @todaydesign/nuxt-craftcms
  ],
  ```
 
-3. Add the Craft CMS options to your `nuxt.config.ts`:
+3. Add `'@todaydesign/nuxt-craftcms'` to `build.transpile` inside `nuxt.config.ts`.  
+
+```typescript
+  build: {
+      transpile: [
+         'vee-validate/dist/rules',
+         '@todaydesign/nuxt-craftcms'
+      ]
+    ...
+   }
+```
+
+4. Add the Craft CMS options to your `nuxt.config.ts`, take a special note of the plugins:
 
 ```
    ...
@@ -43,9 +55,9 @@ npm i @todaydesign/nuxt-craftcms
   ...
 ```
 
-4. Copy a `frontend/nuxt-craftcms` folder from another projects like [Code Club Australia](https://github.com/TodayDesign/codeclubau-org/tree/develop/frontend/nuxt-craftcms) and add it to your project.
+5. Copy a `frontend/nuxt-craftcms` folder from another projects like [Code Club Australia](https://github.com/TodayDesign/codeclubau-org/tree/develop/frontend/nuxt-craftcms) and add it to your project.
 
-5. Make sure your new `frontend/nuxt-craftcms` folder contains an `index.ts` file with the following contents inside:
+6. Make sure your new `frontend/nuxt-craftcms` folder contains an `index.ts` file with the following contents inside:
 
 ```typescript
 import entryTypes from '~/nuxt-craftcms/load-queries'
