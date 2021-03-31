@@ -1,6 +1,6 @@
 {
   "name": "@todaydesign/nuxt-craftcms",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "",
   "main": "dist/module.js",
   "types": "dist/module.d.ts",
@@ -15,17 +15,18 @@
     "index.d.ts"
   ],
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.0.0",
     "algoliasearch": "^3.34.0",
     "apollo-boost": "^0.4.4",
     "graphql": "^14.5.8",
-    "graphql-tag": "^2.10.1",
+    "graphql-tag": "^2.11.0",
+    "isomorphic-fetch": "^3.0.0",
     "nuxt-property-decorator": "^2.9.1",
-    "url-search-params-polyfill": "8.1.0"
+    "url-search-params-polyfill": "^8.1.0"
   },
   "peerDependencies": {
-    "@nuxtjs/axios": "^5.3.6",
     "nuxt": "^2.9.2",
     "vue": "*"
   },
