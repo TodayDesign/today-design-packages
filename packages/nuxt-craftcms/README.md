@@ -89,11 +89,9 @@ npm i
 
 # Create a NPM syslink
 npm link
-
-# Watch the file changes
-npm run dev
 ```
-⚠️ If you're trying to edit `.vue` files, edit them directly in the dist folder. Then when you're finished, copy the modified files to the lib folder. 
+
+Modify the `package.json` main to `"main": "lib/module.ts",`
 
 Now you can go into the project where you will test the package
 
@@ -107,7 +105,7 @@ npm link @todaydesign/nuxt-craftcms
 
 To watch for file changes in the package, add this line in the `nuxt.config.ts`:
 ```bash
-  watch: ['~/node_modules/@todaydesign/nuxt-craftcms/dist/*'],
+  watch: ['~/node_modules/@todaydesign/nuxt-craftcms/*'],
 ```
 
 Run the dev environment
@@ -118,7 +116,13 @@ npm run dev
 Now when ever you make changes to the package, typescript will reload the dist folder and your nuxt project will reload with the updated package.
 
 ## Publishing to NPM
+
+Make sure you change the `package.json` main to `"dist/module.js"`
+
 ```bash
+# Build the package
+npm run build
+
 # Login to NPM, you can find the details in Team Password
 npm login
 
@@ -127,7 +131,6 @@ cd today-design-packages
 
 # Publish with Lerna
 npm run publish
-
 ```
 The package will now be available as `@today-design/nuxt-craftcms`
 
