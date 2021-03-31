@@ -24,7 +24,7 @@ module.exports = function icons (moduleOptions) {
 
     if (svgLoader) {
       svgLoader.exclude = [
-        path.resolve(__dirname, '../../../assets/icons/')
+        path.resolve(__dirname, '../../../../', options.iconsDir)
       ]
     }
     config.module.rules.push({
