@@ -1,6 +1,8 @@
+import {Options, PaginatedRoute} from "../types";
+
 const axios = require('axios')
 
-export default async function (options) {
+export default async function (options: Options) {
   let routes: Array<{uri: string}> = []
   const headers = options.apiToken ? {
     authorization: options.apiToken ? `Bearer ${options.apiToken}` : ''
@@ -118,7 +120,7 @@ export default async function (options) {
   return routes.filter(route => route.uri)
 }
 
-const getRequest = (options, headers, section, categoryId = null) => {
+const getRequest = (options: Options, headers: Object, section: PaginatedRoute, categoryId = null) => {
   return axios({
     method: 'POST',
     url: options.baseUrl + options.graphqlEndpoint,

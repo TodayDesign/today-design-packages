@@ -1,4 +1,6 @@
-export default context => ({
+import {NuxtContext} from "../types";
+
+export default (context: NuxtContext) => ({
   options: context.app.$craftcms.options,
 
   // Deep access to properties

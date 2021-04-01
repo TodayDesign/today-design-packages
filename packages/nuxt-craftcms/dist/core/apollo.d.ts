@@ -1,2 +1,3 @@
 import { ApolloClient } from 'apollo-boost';
-export default function (options: any): ApolloClient<import("apollo-boost").NormalizedCacheObject>;
+import { Options } from "../types";
+export default function (options: Options): ApolloClient<import("apollo-boost").NormalizedCacheObject>;

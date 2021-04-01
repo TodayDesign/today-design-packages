@@ -1,39 +1,9 @@
-import { Module } from '@nuxt/types'
+import { Module} from '@nuxt/types'
 import generateRoutes from './core/generate-routes'
 import schemaQuery from './core/schema-query'
+import {Options} from "./types";
+import {NuxtOptionsPlugin} from "@nuxt/types/config/plugin";
 const path = require('path')
-
-declare module 'vue/types/vue' {
-  interface Vue {
-    $craftcms: any
-  }
-}
-
-interface SearchOptions {
-  apiKey: string,
-  appId: string,
-  indeces: Object | null
-}
-
-export interface Options {
-  baseUrl: string,
-  appBaseUrl: string,
-  useProxy?: boolean,
-  modules: any,
-  apiToken?: string,
-  graphqlEndpoint?: string,
-  siteHandle?: string,
-  siteName?: string,
-  search?: SearchOptions,
-  paginatedRoutes?: Array<Object>,
-  disallowIndexing?: boolean
-  schema?: Object | null,
-  productionUrl: string,
-  robots?: Object,
-  middleware?: Array<Function>,
-  sitemap?: boolean,
-  showEditBtn? : boolean
-}
 
 export const defaults: Options = {
   baseUrl: '',
@@ -42,6 +12,7 @@ export const defaults: Options = {
   modules: {},
   apiToken: '',
   graphqlEndpoint: '/api',
+  contentBaseUrl: '',
   siteHandle: 'default',
   siteName: '',
   search: {
@@ -104,10 +75,12 @@ const craftcms: Module<Options> = async function (moduleOptions) {
     options
   })
 
+  console.log("Here we are")
+
   // Extend craftcms with plugins
   // This is where queries and templates will be loaded
   if (options.plugins) {
-    options.plugins.forEach((p) => this.options.plugins.push(p))
+    options.plugins.forEach((p: NuxtOptionsPlugin) => this.options.plugins.push(p))
     delete options.plugins
   }
 

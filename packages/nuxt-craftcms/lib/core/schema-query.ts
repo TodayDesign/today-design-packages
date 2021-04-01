@@ -1,4 +1,4 @@
-import {Options} from "../module";
+import {Options} from "../types";
 
 const axios = require('axios')
 
@@ -7,7 +7,7 @@ export default async function (options: Options) {
     authorization: options.apiToken ? `Bearer ${options.apiToken}` : ''
   } : {}
 
-  // Fetch GraohQL schema
+  // Fetch GraphQL schema
   const { data } = await axios({
     method: 'POST',
     url: options.baseUrl + options.graphqlEndpoint,

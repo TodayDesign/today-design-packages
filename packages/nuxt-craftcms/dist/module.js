@@ -8,6 +8,7 @@ export const defaults = {
     modules: {},
     apiToken: '',
     graphqlEndpoint: '/api',
+    contentBaseUrl: '',
     siteHandle: 'default',
     siteName: '',
     search: {
@@ -63,6 +64,7 @@ const craftcms = async function (moduleOptions) {
         fileName: 'craftcms.js',
         options
     });
+    console.log("Here we are");
     // Extend craftcms with plugins
     // This is where queries and templates will be loaded
     if (options.plugins) {

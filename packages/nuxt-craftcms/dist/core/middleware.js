@@ -9,7 +9,7 @@ export default async function (context) {
     let uri = context.route.path === '/'
         ? '__home__'
         : context.route.path.replace(/^\/+/, '').replace(/\/$/, '');
-    let token = '';
+    let token;
     // Set site context
     context.site = options.siteHandle;
     if (process.server) {
@@ -17,6 +17,7 @@ export default async function (context) {
         token = params.get('token') || '';
     }
     else {
+        // @ts-ignore
         token = context.route.query?.token;
     }
     // Check if preview URL
@@ -29,7 +30,7 @@ export default async function (context) {
     // Check if paginated page
     if (RegExp(/\/page\//).test(uri)) {
         // Add page param to route context
-        context.route.params.page = Number(uri.split('/').pop());
+        context.route.params.page = Number(uri.split('/').pop()).toString();
         // Update URI to index page
         uri = uri.split('/page/')[0];
     }
@@ -100,14 +101,14 @@ export default async function (context) {
             }
         }
         // Check if paginated route
-        if (options.paginatedRoutes.find(route => route.uri === uri)) {
+        if (options.paginatedRoutes?.find(route => route.uri === uri)) {
             // Attach per page attribute to context
-            context.perPage = options.paginatedRoutes.find(route => route.uri === uri).perPage;
+            context.perPage = options.paginatedRoutes.find(route => route.uri === uri)?.perPage;
         }
         // Check if pagination route for category
         if (page && page.groupHandle && options.paginatedRoutes.find(route => route.category === page.groupHandle)) {
             // Attach per page attribute to context
-            context.perPage = options.paginatedRoutes.find(route => route.category === page.groupHandle).perPage;
+            context.perPage = options.paginatedRoutes.find(route => route.category === page.groupHandle)?.perPage;
         }
         // Get page data
         if (!entryTypes[context.pageType]) {

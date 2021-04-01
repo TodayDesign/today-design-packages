@@ -1,2 +1,3 @@
 import 'url-search-params-polyfill';
-export default function (context: any): Promise<any>;
+import { NuxtContext } from "../types";
+export default function (context: NuxtContext): Promise<NuxtContext>;

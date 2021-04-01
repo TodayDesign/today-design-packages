@@ -3,7 +3,7 @@
   "version": "1.0.0-alpha.6",
   "description": "",
   "main": "dist/module.js",
-  "types": "dist/module.d.ts",
+  "types": "types.d.ts",
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc && npm run copy-vue-files",

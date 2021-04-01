@@ -1,4 +1,4 @@
-export default context => ({
+export default (context) => ({
     options: context.app.$craftcms.options,
     // Deep access to properties
     get(obj, ...props) {

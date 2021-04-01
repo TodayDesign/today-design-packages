@@ -16,14 +16,18 @@
     "types": [
       "@types/node",
       "@nuxt/types"
-    ]
+    ],
+    "paths": {
+      "~/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
     "lib",
-    "lib/**/*.ts",
-    "lib/**/*.vue"
+    "lib/**/*.ts"
   ],
   "exclude": [
     "templates"
-  ],
+  ]
 }

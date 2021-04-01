@@ -7,6 +7,7 @@ export default function (options) {
     const httpLink = new HttpLink({ uri: options.contentBaseUrl + options.graphqlEndpoint, fetch });
     const introspectionQueryResultData = options.schema;
     const fragmentMatcher = new IntrospectionFragmentMatcher({
+        // @ts-ignore
         introspectionQueryResultData
     });
     const authLink = new ApolloLink((operation, forward) => {

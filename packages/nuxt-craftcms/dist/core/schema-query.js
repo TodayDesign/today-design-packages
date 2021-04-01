@@ -3,7 +3,7 @@ export default async function (options) {
     const headers = options.apiToken ? {
         authorization: options.apiToken ? `Bearer ${options.apiToken}` : ''
     } : {};
-    // Fetch GraohQL schema
+    // Fetch GraphQL schema
     const { data } = await axios({
         method: 'POST',
         url: options.baseUrl + options.graphqlEndpoint,

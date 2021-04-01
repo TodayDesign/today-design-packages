@@ -1,4 +1,5 @@
-declare const _default: (context: any) => {
+import { NuxtContext } from "../types";
+declare const _default: (context: NuxtContext) => {
     options: any;
     get(obj: any, ...props: string[]): any;
     getPathName(str: string): string;

@@ -1,16 +1,21 @@
 import { ApolloClient, ApolloLink, InMemoryCache, HttpLink } from 'apollo-boost'
 import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
+import { Options } from "../types"
 
 // Add fetch
 require('es6-promise').polyfill()
 require('isomorphic-fetch')
 
-export default function (options: any) {
+export default function (options: Options) {
   const httpLink = new HttpLink({ uri: options.contentBaseUrl + options.graphqlEndpoint, fetch })
   const introspectionQueryResultData = options.schema
+
   const fragmentMatcher = new IntrospectionFragmentMatcher({
+    // @ts-ignore
     introspectionQueryResultData
   })
+
+
   const authLink = new ApolloLink((operation, forward) => {
     const headers = options.apiToken ? {
       authorization: options.apiToken ? `Bearer ${options.apiToken}` : ''
