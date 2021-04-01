@@ -130,6 +130,37 @@ npm run dev
 
 Now when ever you make changes to the package, typescript will reload the dist folder and your nuxt project will reload with the updated package.
 
+## Testing the packaged file
+Before publishing you might want to test the package as it would be in NPM. To do that run:
+
+```bash
+# Create a tgz package
+npm pack
+
+# Move the package somewhere accessible
+ mv todaydesign-nuxt-craftcms-YOUR-VERSION.tgz ~
+```
+
+Add the dependency to the `package.json` in a project.
+
+```json5
+{
+   ...
+   "dependencies": {
+      ...
+      "@todaydesign/nuxt-craftcms": "file:~/todaydesign-nuxt-craftcms-YOUR-VERSION.tgz",
+   }
+}
+```
+
+Reinstall the package.
+```bash
+# Force reinstall the package
+npm i @todaydesign/nuxt-craftcms -force
+
+npm run dev
+```
+
 ## Publishing to NPM
 
 Make sure you change the `package.json` main to `"dist/module.js"`
