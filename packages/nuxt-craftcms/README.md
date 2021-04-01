@@ -108,7 +108,7 @@ To watch for file changes in the package, add this line in the `nuxt.config.ts`:
   watch: ['~/node_modules/@todaydesign/nuxt-craftcms/*'],
 ```
 
-Set no symbolic link in `nuxt.config.ts` inside the `build.extend` section:
+Set symlinks to false in `nuxt.config.ts` inside the `build.extend` section:
 
 ```typescript
 build: {
