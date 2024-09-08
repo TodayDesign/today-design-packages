@@ -3,7 +3,8 @@ const path = require('path')
 
 const defaults = {
   iconsDir: 'assets/icons/',
-  loadPaths: []
+  loadPaths: [],
+  ssr: false
 }
 
 module.exports = function icons (moduleOptions) {
@@ -13,7 +14,7 @@ module.exports = function icons (moduleOptions) {
   this.addPlugin({
     src: path.resolve(__dirname, 'plugin.js'),
     fileName: 'icons.js',
-    ssr: false,
+    ssr: options.ssr,
     options
   })
 
